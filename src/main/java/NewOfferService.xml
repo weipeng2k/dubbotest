@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GBK"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://repo.alibaba-inc.com/schema/dubbo"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+	http://repo.alibaba-inc.com/schema/dubbo http://repo.alibaba-inc.com/schema/dubbo/dubbo-component.xsd"
+	default-autowire="byName">
+	<dubbo:application name="test" />
+	<dubbo:registry address="dubbo-reg1.hst.xyi.cn.alidc.net:9090,dubbo-reg2.hst.xyi.cn.alidc.net:9090,dubbo-reg3.hst.xyi.cn.alidc.net:9090,dubbo-reg4.hst.xyi.cn.alidc.net:9090" />
+	<dubbo:monitor address="dubbo-log.hst.xyi.cn.alidc.net:8080" />
+
+	<dubbo:reference id="copyrightOfferManageService"
+		interface="com.alibaba.china.shared.manufacture.service.copyright.CopyrightOfferManageService"
+		version="1.0.0" />
+	
+	<dubbo:reference id="memberReadService"
+		interface="com.alibaba.china.member.service.MemberReadService"
+		version="1.0.0" />
+		
+		
+
+</beans>
